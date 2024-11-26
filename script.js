@@ -46,6 +46,20 @@ function createDots() {
 const dotsContainer = document.querySelector(".dots");  // Assure-toi que ce conteneur existe dans ton HTML
 createDots();
 
+// Ajouter un événement au clic sur chaque dot
+function addDotListeners() {
+    const allDots = document.querySelectorAll(".dot");
+    allDots.forEach(dot => {
+        dot.addEventListener("click", () => {
+            currentIndex = parseInt(dot.getAttribute("data-index"));
+            updateSlide(currentIndex);
+        });
+    });
+}
+
+// Ajouter les événements au clic sur les dots
+addDotListeners();
+
 // Sélection des flèches
 const arrowLeft = document.querySelector('.arrow_left');
 const arrowRight = document.querySelector('.arrow_right');
