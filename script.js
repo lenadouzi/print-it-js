@@ -60,6 +60,19 @@ function addDotListeners() {
 // Ajouter les événements au clic sur les dots
 addDotListeners();
 
+// Fonction pour mettre à jour les dots sélectionnés
+function updateDots() {
+    const allDots = document.querySelectorAll(".dot");
+    allDots.forEach(dot => dot.classList.remove("dot_selected"));
+    const currentDot = document.querySelector(`.dot[data-index='${currentIndex}']`);
+    if (currentDot) {
+        currentDot.classList.add("dot_selected");
+    }
+}
+
+// Appeler la fonction pour mettre à jour les dots
+updateDots();
+
 // Sélection des flèches
 const arrowLeft = document.querySelector('.arrow_left');
 const arrowRight = document.querySelector('.arrow_right');
